@@ -1,4 +1,5 @@
 jdk:
   - openjdk11
 install:
-  - ./gradlew build :lib:publishToMavenLocal
+  - ./gradlew :libsunoom:build :libsunoom:publishToMavenLocal -x :libsunoom:test
+    - find . -name "*.aar"
