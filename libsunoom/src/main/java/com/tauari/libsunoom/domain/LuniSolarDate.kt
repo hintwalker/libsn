@@ -13,9 +13,9 @@ data class LuniSolarDate(
 
     fun areTheSame(other: LuniSolarDate): Boolean {
         return dayOfMonth == other.dayOfMonth
-                || month == other.month
-                || year == other.year
-                || isLeapMonth == other.isLeapMonth
-                ||timeZoneOffset == other.timeZoneOffset
+                && month == other.month
+                && year == other.year
+                && isLeapMonth == other.isLeapMonth
+                && timeZoneOffset == other.timeZoneOffset
     }
 }
