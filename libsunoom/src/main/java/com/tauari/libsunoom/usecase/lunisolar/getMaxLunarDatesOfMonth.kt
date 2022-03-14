@@ -9,8 +9,8 @@ import com.tauari.libsunoom.usecase.conversion.getLuniSolarDateFromGregorian
 fun getMaxLunarDatesOfMonth(month: Int, year: Int, isLeapMonth: Boolean, timeZomeOffset: Int): Int {
     val endLunarDate = LuniSolarDate(30, month, year, isLeapMonth, timeZomeOffset)
     val endSolarDate = getGregorianDateFromLuniSolar(endLunarDate)
-        ?: throw CannotConvertDateException()
-    val confirmLunarDate = getLuniSolarDateFromGregorian(endSolarDate) ?: throw CannotConvertDateException()
+        ?: throw CannotConvertDateException("")
+    val confirmLunarDate = getLuniSolarDateFromGregorian(endSolarDate) ?: throw CannotConvertDateException(endSolarDate)
     return if(confirmLunarDate.dayOfMonth == 1){
         29
     } else {
