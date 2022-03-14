@@ -10,4 +10,12 @@ data class LuniSolarDate(
         val leapMonthDescribe = if(isLeapMonth) " (tháng nhuận)" else ""
         return "$dayOfMonth-$month-$year$leapMonthDescribe"
     }
+
+    fun areTheSame(other: LuniSolarDate): Boolean {
+        return dayOfMonth == other.dayOfMonth
+                || month == other.month
+                || year == other.year
+                || isLeapMonth == other.isLeapMonth
+                ||timeZoneOffset == other.timeZoneOffset
+    }
 }
