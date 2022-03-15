@@ -1,10 +1,7 @@
 package com.tauari.libsunoom
 
-import com.tauari.libsunoom.constants.DateType
+import org.junit.Assert.assertEquals
 import org.junit.Test
-
-import org.junit.Assert.*
-import java.util.*
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -17,8 +14,12 @@ class ExampleUnitTest {
         assertEquals(4, 2 + 2)
     }
 
+
+
     @Test
     fun dateType_isTheSame() {
-        assertEquals(0x000013, DateType.WEEKEND or DateType.FIRST_DATE_OF_MONTH)
+//        assertEquals("TODAY".hashCode(), "TODAY".hashCode() or "FIRST_DATE_OF_MONTH".hashCode())
+        assertEquals("OUT_OF_TABLE".hashCode() or "FIRST_DATE_OF_MONTH".hashCode(), "TODAY".hashCode() or "OUT_OF_TABLE".hashCode() or "FIRST_DATE_OF_MONTH".hashCode())
+//        assertEquals(DateType2.TODAY, [DateType2.TODAY | DateType2.FIRST_DATE_OF_MONTH])
     }
 }
