@@ -1,8 +1,10 @@
 package com.tauari.libsunoom
 
+import com.tauari.libsunoom.constants.DateType
 import org.junit.Test
 
 import org.junit.Assert.*
+import java.util.*
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -13,5 +15,10 @@ class ExampleUnitTest {
     @Test
     fun addition_isCorrect() {
         assertEquals(4, 2 + 2)
+    }
+
+    @Test
+    fun dateType_isTheSame() {
+        assertEquals(0x000013, DateType.WEEKEND or DateType.FIRST_DATE_OF_MONTH)
     }
 }
