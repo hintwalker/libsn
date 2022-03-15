@@ -12,7 +12,11 @@ import java.util.*
 
 fun getDateType(date: SunoomDate, options: DateTypeOption): Int {
     return if(isOutOfTable(date.gregorianDate, options.targetMonth)) {
-        return OUT_OF_TABLE
+        if(isFirstDateOfMonth(date)) {
+            OUT_OF_TABLE or FIRST_DATE_OF_MONTH
+        } else {
+            OUT_OF_TABLE
+        }
     }
     else if(isToday(date.gregorianDate, TimeZone.getDefault())) {
         if(isFirstDateOfMonth(date)) {
