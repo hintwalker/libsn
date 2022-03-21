@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--      Ngu Hanh  -->
+    <color name="grey_600_dark">#ff1b1b1b</color>
+    <color name="green_500_dark">#ff087f23</color>
+    <color name="blue_grey_100_dark">#ff9ea7aa</color>
+    <color name="red_600_dark">#ffab000d</color>
+    <color name="p_2_brown">#ddb160</color>
+</resources>

@@ -5,33 +5,34 @@
     <string name="pattern_date_al" translatable="false">%02d/%02d/%04d (AL)</string>
     <string name="pattern_born_time" translatable="false">%02d:%02d</string>
     <string name="pattern_hour" translatable="false">%02d:%02d</string>
+    <string name="pattern_can_chi" translatable="false">%s %s</string>
 
     <string-array name="day_names">
+        <item>Chủ Nhật</item>
         <item>Thứ 2</item>
         <item>Thứ 3</item>
         <item>Thứ 4</item>
         <item>Thứ 5</item>
         <item>Thứ 6</item>
         <item>Thứ 7</item>
-        <item>Chủ Nhật</item>
     </string-array>
     <string-array name="day_names_short">
+        <item>CN</item>
         <item>T2</item>
         <item>T3</item>
         <item>T4</item>
         <item>T5</item>
         <item>T6</item>
         <item>T7</item>
-        <item>CN</item>
     </string-array>
     <string-array name="day_names_very_short">
+        <item>C</item>
         <item>2</item>
         <item>3</item>
         <item>4</item>
         <item>5</item>
         <item>6</item>
         <item>7</item>
-        <item>C</item>
     </string-array>
     <string-array name="month_names">
         <item>Tháng 1</item>
@@ -74,5 +75,44 @@
         <item>10</item>
         <item>11</item>
         <item>12</item>
+    </string-array>
+    <string-array name="can_names">
+        <item>Giáp</item>
+        <item>Ất</item>
+        <item>Bính</item>
+        <item>Đinh</item>
+        <item>Mậu</item>
+        <item>Kỷ</item>
+        <item>Canh</item>
+        <item>Tân</item>
+        <item>Nhâm</item>
+        <item>Quý</item>
+    </string-array>
+    <string-array name="can_short_names">
+        <item>G</item>
+        <item>Ấ</item>
+        <item>B</item>
+        <item>Đ</item>
+        <item>M</item>
+        <item>K</item>
+        <item>C</item>
+        <item>T</item>
+        <item>N</item>
+        <item>Q</item>
+    </string-array>
+
+    <string-array name="chi_names">
+        <item>Tý</item>
+        <item>Sửu</item>
+        <item>Dần</item>
+        <item>Mão</item>
+        <item>Thìn</item>
+        <item>Tỵ</item>
+        <item>Ngọ</item>
+        <item>Mùi</item>
+        <item>Thân</item>
+        <item>Dậu</item>
+        <item>Tuất</item>
+        <item>Hợi</item>
     </string-array>
 </resources>
