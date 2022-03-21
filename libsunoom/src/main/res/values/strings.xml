@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="ab">ab</string>
+    <string name="pattern_date" translatable="false">%02d/%02d/%04d</string>
+    <string name="pattern_date_al" translatable="false">%02d/%02d/%04d (AL)</string>
+    <string name="pattern_born_time" translatable="false">%02d:%02d</string>
+    <string name="pattern_hour" translatable="false">%02d:%02d</string>
+
     <string-array name="day_names">
         <item>Thứ 2</item>
         <item>Thứ 3</item>
