@@ -2,6 +2,7 @@ package com.tauari.libsunoom
 
 import com.tauari.libsunoom.domain.GregorianDate
 import com.tauari.libsunoom.domain.LuniSolarDate
+import com.tauari.libsunoom.domain.SunoomTime
 import com.tauari.libsunoom.usecase.conversion.getGregorianDateFromLuniSolar
 import com.tauari.libsunoom.usecase.conversion.getLuniSolarDateFromGregorian
 import com.tauari.libsunoom.usecase.lunisolar.getLeapMonthValue
@@ -78,5 +79,25 @@ class TestGregorianToLunisolar {
         assertEquals("year",1965, luniDate?.year)
         assertEquals("month",11, luniDate?.month)
         assertEquals("day",13, luniDate?.dayOfMonth)
+    }
+
+    @Test
+    fun dec1965_23h00() {
+        val gregDate = GregorianDate(31,12,1965, timeZoneOffset)
+        val time = SunoomTime(23,0)
+        val luniDate = getLuniSolarDateFromGregorian(gregDate, time)
+        assertEquals("year",1965, luniDate?.year)
+        assertEquals("month",12, luniDate?.month)
+        assertEquals("day",10, luniDate?.dayOfMonth)
+    }
+
+    @Test
+    fun dec1965_2300_luni() {
+        val luniDate = LuniSolarDate(13,11,1965, false, timeZoneOffset)
+        val time = SunoomTime(23,0)
+        val gregorianDate = getGregorianDateFromLuniSolar(luniDate, time)
+        assertEquals("dayOfMonth",4, gregorianDate?.dayOfMonth)
+        assertEquals("month",12, gregorianDate?.month)
+        assertEquals("year", 1965, gregorianDate?.year)
     }
 }

@@ -1,17 +1,36 @@
 package com.tauari.libsunoom.usecase.conversion
 
-import android.R.attr
-import com.tauari.libsunoom.domain.*
-import com.tauari.libsunoom.usecase.gregorian.getGregorianDateFromJdnLocal
+import com.tauari.libsunoom.domain.GregorianDate
+import com.tauari.libsunoom.domain.LuniSolarDate
+import com.tauari.libsunoom.domain.PairOfFirstJdnNov
+import com.tauari.libsunoom.domain.SunoomTime
+import com.tauari.libsunoom.usecase.gregorian.nextGregorianDate
+import com.tauari.libsunoom.usecase.jdn.countMonthsFrom1Jan1900UT
+import com.tauari.libsunoom.usecase.jdn.getJdnAt00Local
+import com.tauari.libsunoom.usecase.jdn.getJdnOnNewMoonDay
+import com.tauari.libsunoom.usecase.jdn.shiftJdnTo00Local
 import com.tauari.libsunoom.usecase.lunisolar.getLuniSolarYear
-import android.R.attr.y
-
-import android.R.attr.x
-import com.tauari.libsunoom.usecase.jdn.*
-import com.tauari.libsunoom.usecase.sun.getSunLongitudeFromJdn
-import com.tauari.libsunoom.usecase.sun.isMajorTermInside
 import kotlin.math.floor
 
+fun getLuniSolarDateFromGregorian(date: GregorianDate, time: SunoomTime): LuniSolarDate? {
+    return when (time.hour) {
+        in 0..22 -> getLuniSolarDateFromGregorian(date)
+        23 -> {
+            val nextDay = nextGregorianDate(date)
+            getLuniSolarDateFromGregorian(nextDay)
+        }
+        else -> null
+    }
+}
+//    if(time.hour in 0..22) {
+//        return getLuniSolarDateFromGregorian(date)
+//    }
+//    if(time.hour == 23) {
+//        val nextDay = nextGregorianDate(date)
+//        return getLuniSolarDateFromGregorian(nextDay)
+//    } else {
+//        return null
+//    }
 
 fun getLuniSolarDateFromGregorian(date: GregorianDate): LuniSolarDate? {
     var resultYear = date.year
